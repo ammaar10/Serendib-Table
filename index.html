@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serendib Table - Authentic Sri Lankan Cuisine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1a1a1a;
+            background: #1F1F1E;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 2rem;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #e8bebe;
+        }
+
+        /* HERO */
+        .hero {
+            background: #2C1A0E;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-tag {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #EF9F27;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #FAC775;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #B4B2A9;
+            max-width: 480px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #EF9F27;
+            color: #2C1A0E;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #BA7517;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: #B9B7AE;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: #262624;
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #BA7517;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+
+        /* MENU */
+
+        .menu-section {
+            background-color: #262624;
+            padding: 4rem 2rem;
+        }
+
+        .menu-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .menu-section .section-title {
+            text-align: center;
+        }
+
+        .menu-section .section-label {
+            text-align: center;
+            display: block;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .menu-card {
+            background: #1F1F1E;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-tag {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #854F0B;
+            background: #FAEEDA;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            align-self: flex-start;
+
+        }
+
+        .menu-card h3 {
+            font-size: 15px;
+            font-weight: 750;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .menu-card p {
+            font-size: 13px;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .menu-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #a86302;
+            margin-top: auto;
+        }
+
+        footer {
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 13px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo">SERENDIB TABLE</div>
+        <div class="nav-links">
+            <a href="#">Menu</a>
+            <a href="#">About</a>
+            <a href="#">Reservations</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <p class="hero-tag">Authentic Sri Lankan Cuisine</p>
+        <h1>Where Every Plate<br>Tells a Story</h1>
+        <p>Traditional recipes passed down through generations, crafted with fresh local ingredients and the warmth of
+            Sri Lankan hospitality.</p>
+        <button class="btn">Reserve a Table</button>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section">
+        <div class="about">
+            <div class="about-text">
+                <p class="section-label">Our story</p>
+                <h2 class="section-title">Rooted in Tradition,<br>Served with Love</h2>
+                <p>Serendib Table was born from a simple belief - that food is memory. Our kitchen draws from the rich
+                    culinary heritage of Sri Lanka, from the coastal spice of Galle to the hill country flavours of
+                    Kandy.</p>
+                <p>Every dish is prepared fresh daily using traditional clay pots, hand-ground spice blends, and recipes
+                    that have never been written down - only passed on.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-num">12+</div>
+                    <div class="stat-label">Years of service</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">40+</div>
+                    <div class="stat-label">Menu items</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Fresh daily</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">4.9★</div>
+                    <div class="stat-label">Guest rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="menu-section">
+        <div class="menu-inner">
+            <p class="section-label">Our Menu</p>
+            <h2 class="section-title">Signature Dishes</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <span class="menu-tag">Main</span>
+                    <h3>Kothu Rotti</h3>
+                    <p>Hand-chopped roti stir-fried with egg, vegetables, and your choice of chicken or beef in our
+                        signature spice blend.</p>
+                    <div class="menu-price">LKR 1,200</div>
+                </div>
+                <div class="menu-card">
+                    <span class="menu-tag">Main</span>
+                    <h3>Rice &amp; Curry</h3>
+                    <p>Traditional rice with dhal, three vegetable curries, papadam, and sambols the heart of Sri Lankan
+                        dining.</p>
+                    <div class="menu-price">LKR 950</div>
+                </div>
+                <div class="menu-card">
+                    <span class="menu-tag">Seafood</span>
+                    <h3>Prawn Ambul Thiyal</h3>
+                    <p>Tangy sour prawn curry cooked with goraka, pandan, and roasted spices - a southern coastal
+                        classic.</p>
+                    <div class="menu-price">LKR 1,800</div>
+                </div>
+                <div class="menu-card">
+                    <span class="menu-tag">Dessert</span>
+                    <h3>Watalappam</h3>
+                    <p>Silky coconut custard steamed with jaggery, cardamom, and cashews - Sri Lanka's most beloved
+                        dessert.</p>
+                    <div class="menu-price">LKR 550</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Serendib Table. All rights reserved. Crafted with ♥ in Colombo.
+    </footer>
+
+</body>
+
+</html>
