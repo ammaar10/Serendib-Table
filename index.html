@@ -13,6 +13,11 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #1a1a1a;
@@ -46,6 +51,20 @@
 
         .nav-links a:hover {
             color: #e8bebe;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #fff;
         }
 
         /* HERO */
@@ -233,11 +252,89 @@
             margin-top: auto;
         }
 
+        .reservation-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin-top: 1.5rem;
+        }
+
+        .form-input {
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background: #262624;
+            color: white;
+            font-size: 14px;
+        }
+
+        .form-input::placeholder {
+            color: #888;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            background: #262624;
+            border-radius: 8px;
+            padding: 1.25rem;
+            color: #B9B7AE;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
         footer {
             padding: 1.5rem 2rem;
             text-align: center;
             font-size: 13px;
             color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1F1F1E;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                z-index: 99;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+            }
+
+            .stat-card {
+                min-width: 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
     </style>
 </head>
@@ -245,11 +342,16 @@
 <body>
     <nav>
         <div class="nav-logo">SERENDIB TABLE</div>
-        <div class="nav-links">
-            <a href="#">Menu</a>
-            <a href="#">About</a>
-            <a href="#">Reservations</a>
-            <a href="#">Contact</a>
+        <div class="nav-links" id="navLinks">
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#reservations">Reservations</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
@@ -263,7 +365,7 @@
     </div>
 
     <!-- ABOUT -->
-    <div class="section">
+    <div class="section" id="about">
         <div class="about">
             <div class="about-text">
                 <p class="section-label">Our story</p>
@@ -296,7 +398,7 @@
     </div>
 
     <!-- MENU -->
-    <div class="menu-section">
+    <div class="menu-section" id="menu">
         <div class="menu-inner">
             <p class="section-label">Our Menu</p>
             <h2 class="section-title">Signature Dishes</h2>
@@ -333,10 +435,54 @@
         </div>
     </div>
 
+    <!-- RESERVATIONS -->
+    <div class="section" id="reservations">
+        <h2 class="section-title">Reservations</h2>
+        <p class="section-label">Book a table</p>
+        <div class="reservation-form">
+            <input type="text" placeholder="Your Name" class="form-input">
+            <input type="text" placeholder="Phone Number" class="form-input">
+            <input type="date" class="form-input">
+            <input type="number" placeholder="Number of Guests" class="form-input">
+            <button class="btn">Confirm Reservation</button>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-label">Get in touch</p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <p>📍 42 Galle Road, Colombo 03</p>
+            </div>
+            <div class="contact-item">
+                <p>📞 +94 11 234 5678</p>
+            </div>
+            <div class="contact-item">
+                <p>📧 reservations@serendibtable.lk</p>
+            </div>
+            <div class="contact-item">
+                <p>🕐 Mon-Sat: 11AM-10PM, Sun: 11AM-8PM</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         © 2025 Serendib Table. All rights reserved. Crafted with ♥ in Colombo.
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+    </script>
 </body>
 
 </html>
